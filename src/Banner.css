@@ -49,3 +49,8 @@
     #111
   );
 }
+@media (max-width: 768px) {
+  .banner_description {
+    max-width: 330px;
+  }
+}
