@@ -1,9 +1,9 @@
 import React from 'react'
 import './HomeScreen.css'
-import Nav from './Nav'
-import Banner from './Banner'
-import Row from './Row'
-import requests from './Requests'
+import Nav from '../Nav'
+import Banner from '../Banner'
+import Row from '../Row'
+import requests from '../Requests'
 function Homescreen() {
     return (
         <div className="homescreen">
@@ -25,4 +25,4 @@ function Homescreen() {
     )
 }
 
-export default Homescreen
+export default Homescreen;
