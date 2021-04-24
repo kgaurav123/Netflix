@@ -26,6 +26,7 @@
   border-radius: 5px;
   font-weight: 600;
   border: none;
+  outline-width: 0;
   cursor: pointer;
   margin-top: 20px;
 }
@@ -35,4 +36,8 @@
 }
 .signupScreen_gray {
   color: gray;
+}
+.signupScreen_link:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
