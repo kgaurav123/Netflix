@@ -22,18 +22,7 @@ function App() {
     )
     return unsubscribe;
   }, []);
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
 
-        console.log(userAuth);
-      }
-      else {
-        console.log("Logged out")
-      }
-    })
-    return unsub;
-  }, []);
   return (
     <div className="app">
 
