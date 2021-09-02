@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Banner.css'
 import axios from "./axios"
 import requests from "./Requests"
+
 function Banner() {
     const [movie, setMovie] = useState([]);
     useEffect(() => {
@@ -22,6 +23,7 @@ function Banner() {
         return string?.length > n ? string.substr(0, n - 1) + '...' : string;
     }
     return (
+
         <header className="banner" style={{
             backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`
         }}>
@@ -39,6 +41,7 @@ function Banner() {
             </div>
             <div className="banner--fadebottom" />
         </header >
+
     )
 }
 

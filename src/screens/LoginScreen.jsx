@@ -16,7 +16,7 @@ function LoginScreen() {
                             <h2>Watch anywhere, Cancel at any time</h2>
                             <h3>
                                 Ready to watch? Enter your email to create or restart your membership.
-                        </h3>
+                            </h3>
                             <div className="loginScreen_input">
                                 <form>
                                     <input type="email" placeholder="Enter your email" />

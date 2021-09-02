@@ -1,35 +1,60 @@
-import React from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
+import ProfileScreen from './screens/ProfileScreen';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 
 } from "react-router-dom";
+import { auth } from "./firebase";
+const Email = createContext();
 
 function App() {
-  const user = null;
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(
+      (userAuth) => {
+        setUser(userAuth);
+      }
+    )
+    return unsubscribe;
+  }, []);
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
 
+        console.log(userAuth);
+      }
+      else {
+        console.log("Logged out")
+      }
+    })
+    return unsub;
+  }, []);
   return (
     <div className="app">
 
       <Router>
 
-        {!user ? (
-          <LoginScreen />
-        ) : [
-          <Switch>
+        {user ? (
+          [
+            (<Email.Provider value={user.email}>
+              <Switch>
+                <Route exact path='/profile'>
+                  <ProfileScreen />
+                </Route>
+                <Route exact path='/'>
+                  <HomeScreen />
+                </Route>
+              </Switch>
+            </Email.Provider>)
 
-            <Route path="/about">
-              <h1>Wow whats up</h1>
-            </Route>
-            <Route exact path="/">
-              <HomeScreen />
-            </Route>
-          </Switch>
-        ]
+          ]
+        ) :
+          <LoginScreen />
 
         }
 
@@ -43,3 +68,4 @@ function App() {
 }
 
 export default App;
+export { Email };

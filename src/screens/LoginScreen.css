@@ -52,6 +52,7 @@
   font-size: 3.125rem;
   margin-bottom: 20px;
 }
+
 .loginScreen_body > h2 {
   font-size: 2rem;
   font-weight: 400;
@@ -80,4 +81,20 @@
 }
 .loginScreen_input {
   margin: 20px;
+}
+@media (max-width: 768px) {
+  .loginScreen_body > h1 {
+    font-size: 2rem;
+  }
+  .loginScreen_body > h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .loginScreen_body > h3 {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .loginScreen_body {
+    top: 20%;
+  }
 }
